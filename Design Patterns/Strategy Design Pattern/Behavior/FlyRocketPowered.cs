@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Design_Patterns.Strategy_Design_Pattern.Behavior
+﻿namespace Design_Patterns.Strategy_Design_Pattern.Behavior
 {
     public class FlyRocketPowered:IFlyBehavior
     {

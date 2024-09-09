@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Design_Patterns.Strategy_Design_Pattern
+﻿namespace Design_Patterns.Strategy_Design_Pattern
 {
     public abstract class Duck
     {
-        public IFlyBehavior flyBehavior;
-        public IQuackBehavior quackBehavior;
+        public IFlyBehavior? flyBehavior = null;
+        public IQuackBehavior? quackBehavior = null;
 
         public Duck() { }
 
@@ -17,7 +11,7 @@ namespace Design_Patterns.Strategy_Design_Pattern
 
         public void setFlyBehavior(IFlyBehavior fb)
         {
-            flyBehavior = fb;   
+            flyBehavior = fb;
         }
 
         public void setQuackBehavior(IQuackBehavior qb)
@@ -26,12 +20,12 @@ namespace Design_Patterns.Strategy_Design_Pattern
         }
         public void performFly()
         {
-            flyBehavior.fly();
+            flyBehavior?.fly();
         }
 
         public void performQuack()
         {
-            quackBehavior.quack();
+            quackBehavior?.quack();
         }
 
         public void swim()
