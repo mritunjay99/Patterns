@@ -4,10 +4,6 @@ namespace Design_Patterns.Decorator_Pattern.Concrete_class
 {
     public class Espresso:Beverage
     {
-        //public Espresso() 
-        //{
-        //    description = "Espresso";
-        //}
         public override string getDescription()
         {
             return "Espresso";
