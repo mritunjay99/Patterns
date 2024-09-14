@@ -4,12 +4,8 @@ namespace Design_Patterns.Decorator_Pattern.Concrete_class
 {
     public class Mocha:CondimentDecorator
     {
-        Beverage beverage;
-
-        public Mocha(Beverage bvg)
-        {
-            beverage = bvg;
-        }
+        public Mocha(Beverage bvg) : base(bvg) { }
+        
 
         public override string getDescription()
         {

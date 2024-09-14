@@ -4,13 +4,8 @@ namespace Design_Patterns.Decorator_Pattern.Concrete_class
 {
     public class Whip : CondimentDecorator
     {
-        Beverage beverage;
-
-        public Whip(Beverage bvg)
-        {
-            beverage = bvg;
-        }
-
+        public Whip(Beverage bvg) : base(bvg) { }
+        
         public override string getDescription()
         {
             return beverage.getDescription() + ", Whip";

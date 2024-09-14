@@ -1,5 +1,6 @@
 ﻿using Design_Patterns.Decorator_Pattern.Base_class;
 using Design_Patterns.Decorator_Pattern.Concrete_class;
+using Design_Patterns.Factory_Design_Pattern;
 using Design_Patterns.Observer_Design_Pattern.Observer_Interface;
 using Design_Patterns.Observer_Design_Pattern.Subject_implementation;
 using Design_Patterns.Observer_Design_Pattern.Subject_Interface;
@@ -52,14 +53,21 @@ class Program
         Console.WriteLine(beverage.getDescription() + " $" + beverage.cost());
         Beverage beverage2 = new DarkRoast();
         beverage2 = new Mocha(beverage2);
-        beverage2=new Mocha(beverage2);
+        beverage2 = new Mocha(beverage2);
         beverage2 = new Whip(beverage2);
 
         Console.WriteLine(beverage2.getDescription() + " $" + beverage2.cost());
         Beverage beverage3 = new HouseBlend();
         beverage3 = new Soy(beverage3);
-        beverage3=new Mocha(beverage3);
-        beverage3=new Whip(beverage3);
+        beverage3 = new Mocha(beverage3);
+        beverage3 = new Whip(beverage3);
         Console.WriteLine(beverage3.getDescription() + " $" + beverage3.cost());
+
+        //Factory design pattern
+
+        PizzaStore store = new PizzaStore();
+        Pizza pizza = store.orderPizza("cheese");
+        Pizza pizza2 = store.orderPizza("veggie");
+        Pizza pizza3 = store.orderPizza("pepperoni");
     }
 }
