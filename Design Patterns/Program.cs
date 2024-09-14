@@ -1,4 +1,6 @@
-﻿using Design_Patterns.Observer_Design_Pattern.Observer_Interface;
+﻿using Design_Patterns.Decorator_Pattern.Base_class;
+using Design_Patterns.Decorator_Pattern.Concrete_class;
+using Design_Patterns.Observer_Design_Pattern.Observer_Interface;
 using Design_Patterns.Observer_Design_Pattern.Subject_implementation;
 using Design_Patterns.Observer_Design_Pattern.Subject_Interface;
 using Design_Patterns.Strategy_Design_Pattern;
@@ -43,5 +45,21 @@ class Program
         obj1.update();
 
         topic.postMessage("Namma Bengaluru!!");
+
+        //Decorator pattern
+
+        Beverage beverage = new Espresso();
+        Console.WriteLine(beverage.getDescription() + " $" + beverage.cost());
+        Beverage beverage2 = new DarkRoast();
+        beverage2 = new Mocha(beverage2);
+        beverage2=new Mocha(beverage2);
+        beverage2 = new Whip(beverage2);
+
+        Console.WriteLine(beverage2.getDescription() + " $" + beverage2.cost());
+        Beverage beverage3 = new HouseBlend();
+        beverage3 = new Soy(beverage3);
+        beverage3=new Mocha(beverage3);
+        beverage3=new Whip(beverage3);
+        Console.WriteLine(beverage3.getDescription() + " $" + beverage3.cost());
     }
 }
