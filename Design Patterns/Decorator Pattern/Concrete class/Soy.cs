@@ -4,13 +4,8 @@ namespace Design_Patterns.Decorator_Pattern.Concrete_class
 {
     public class Soy : CondimentDecorator
     {
-        Beverage beverage;
-
-        public Soy(Beverage bvg)
-        {
-            beverage = bvg;
-        }
-
+        public Soy(Beverage bvg) : base(bvg) { }
+        
         public override string getDescription()
         {
             return beverage.getDescription() + ", Soy";

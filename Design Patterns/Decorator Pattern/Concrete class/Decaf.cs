@@ -4,11 +4,6 @@ namespace Design_Patterns.Decorator_Pattern.Concrete_class
 {
     public class Decaf:Beverage
     {
-        //public Decaf()
-        //{
-        //    description = "Decaf coffee";
-        //}
-
         public override string getDescription()
         {
             return "Decaf coffee";

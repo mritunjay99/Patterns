@@ -3,5 +3,11 @@
     public abstract class CondimentDecorator:Beverage
     {
         //public abstract string getDescription();
+        protected Beverage beverage;
+
+        protected CondimentDecorator(Beverage beverage)
+        {
+            this.beverage = beverage;
+        }
     }
 }
