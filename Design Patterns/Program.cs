@@ -1,6 +1,7 @@
 ﻿using Design_Patterns.Decorator_Pattern.Base_class;
 using Design_Patterns.Decorator_Pattern.Concrete_class;
 using Design_Patterns.Factory_Design_Pattern;
+using Design_Patterns.Factory_Method_Pattern;
 using Design_Patterns.Observer_Design_Pattern.Observer_Interface;
 using Design_Patterns.Observer_Design_Pattern.Subject_implementation;
 using Design_Patterns.Observer_Design_Pattern.Subject_Interface;
@@ -69,5 +70,13 @@ class Program
         Pizza pizza = store.orderPizza("cheese");
         Pizza pizza2 = store.orderPizza("veggie");
         Pizza pizza3 = store.orderPizza("pepperoni");
+
+        //Factory method design pattern
+
+        Restaurant beefResto = new BeefBurgerRestaurant();
+        Burger beefBurger = beefResto.orderBurger();
+
+        Restaurant veggieResto = new VeggieBurgerRestaurant();
+        Burger veggieBurger = veggieResto.orderBurger();
     }
 }
