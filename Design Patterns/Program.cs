@@ -1,4 +1,5 @@
-﻿using Design_Patterns.Decorator_Pattern.Base_class;
+﻿using Design_Patterns.Abstract_Factory_Desgin_Pattern;
+using Design_Patterns.Decorator_Pattern.Base_class;
 using Design_Patterns.Decorator_Pattern.Concrete_class;
 using Design_Patterns.Factory_Design_Pattern;
 using Design_Patterns.Factory_Method_Pattern;
@@ -78,5 +79,21 @@ class Program
 
         Restaurant veggieResto = new VeggieBurgerRestaurant();
         Burger veggieBurger = veggieResto.orderBurger();
+
+        //Abstract factory design pattern
+
+        Company msi = new MsiManufacturer();
+        Gpu msiGpu = msi.createGpu();
+        msiGpu.assemble();
+
+        Design_Patterns.Abstract_Factory_Desgin_Pattern.Monitor msiMonitor=msi.createMonitor();
+        msiMonitor.assemble();
+
+        Company asus = new AsusManufacturer();
+        Gpu asusGpu = asus.createGpu();
+        asusGpu.assemble();
+
+        Design_Patterns.Abstract_Factory_Desgin_Pattern.Monitor asusMonitor=asus.createMonitor();
+        asusMonitor.assemble();
     }
 }
