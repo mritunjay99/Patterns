@@ -20,5 +20,10 @@ namespace Design_Patterns.Command_Pattern.Command
         {
             Controller.turnOnAC();
         }
+        
+        public void undo()
+        {
+            Controller.turnOffAC();
+        }
     }
 }

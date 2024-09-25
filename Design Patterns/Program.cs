@@ -106,5 +106,8 @@ class Program
         remote.pressButton();
         remote.setCommand(new TurnOffACCommand(new Design_Patterns.Command_Pattern.Receiver.AcController()));
         remote.pressButton();
+        remote.undo();
+        remote.undo();
+        remote.undo();
     }
 }
