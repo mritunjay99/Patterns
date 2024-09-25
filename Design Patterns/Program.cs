@@ -1,4 +1,6 @@
 ﻿using Design_Patterns.Abstract_Factory_Desgin_Pattern;
+using Design_Patterns.Command_Pattern.Command;
+using Design_Patterns.Command_Pattern.Invoker;
 using Design_Patterns.Decorator_Pattern.Base_class;
 using Design_Patterns.Decorator_Pattern.Concrete_class;
 using Design_Patterns.Factory_Design_Pattern;
@@ -95,5 +97,14 @@ class Program
 
         Design_Patterns.Abstract_Factory_Desgin_Pattern.Monitor asusMonitor=asus.createMonitor();
         asusMonitor.assemble();
+
+
+        //Command Pattern
+
+        RemoteControl remote= new RemoteControl();
+        remote.setCommand(new TurnOnACCommand(new Design_Patterns.Command_Pattern.Receiver.AcController()));
+        remote.pressButton();
+        remote.setCommand(new TurnOffACCommand(new Design_Patterns.Command_Pattern.Receiver.AcController()));
+        remote.pressButton();
     }
 }
