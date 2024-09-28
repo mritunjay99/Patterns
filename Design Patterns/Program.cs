@@ -1,4 +1,5 @@
 ﻿using Design_Patterns.Abstract_Factory_Desgin_Pattern;
+using Design_Patterns.Adapter_Pattern;
 using Design_Patterns.Command_Pattern.Command;
 using Design_Patterns.Command_Pattern.Invoker;
 using Design_Patterns.Decorator_Pattern.Base_class;
@@ -109,5 +110,12 @@ class Program
         remote.undo();
         remote.undo();
         remote.undo();
+
+        //Adapter Pattern
+
+        IDuck turkeyAdater = new TurkeyAdapter(new WildTurkey());
+
+        turkeyAdater.quack();
+        turkeyAdater.fly();
     }
 }
