@@ -12,6 +12,7 @@ using Design_Patterns.Observer_Design_Pattern.Subject_Interface;
 using Design_Patterns.Strategy_Design_Pattern;
 using Design_Patterns.Strategy_Design_Pattern.Behavior;
 using Design_Patterns.Strategy_Design_Pattern.DuckCLass;
+using Design_Patterns.Template_Method_Pattern;
 
 class Program
 {
@@ -117,5 +118,13 @@ class Program
 
         turkeyAdater.quack();
         turkeyAdater.fly();
+
+        //Template method pattern
+
+        Tea tea=new Tea();
+        tea.PrepareRecipe();
+
+        Coffee coffee=new Coffee();
+        coffee.PrepareRecipe();
     }
 }
