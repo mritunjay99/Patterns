@@ -4,6 +4,7 @@ using Design_Patterns.Command_Pattern.Command;
 using Design_Patterns.Command_Pattern.Invoker;
 using Design_Patterns.Decorator_Pattern.Base_class;
 using Design_Patterns.Decorator_Pattern.Concrete_class;
+using Design_Patterns.Facade_Pattern;
 using Design_Patterns.Factory_Design_Pattern;
 using Design_Patterns.Factory_Method_Pattern;
 using Design_Patterns.Observer_Design_Pattern.Observer_Interface;
@@ -126,5 +127,10 @@ class Program
 
         Coffee coffee=new Coffee();
         coffee.PrepareRecipe();
+
+        //Facade pattern
+
+        Order_Facade order_Facade=new Order_Facade();
+        order_Facade.orderFood();
     }
 }
