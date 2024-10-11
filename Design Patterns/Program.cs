@@ -7,6 +7,7 @@ using Design_Patterns.Decorator_Pattern.Concrete_class;
 using Design_Patterns.Facade_Pattern;
 using Design_Patterns.Factory_Design_Pattern;
 using Design_Patterns.Factory_Method_Pattern;
+using Design_Patterns.Iterator_Design_Pattern;
 using Design_Patterns.Observer_Design_Pattern.Observer_Interface;
 using Design_Patterns.Observer_Design_Pattern.Subject_implementation;
 using Design_Patterns.Observer_Design_Pattern.Subject_Interface;
@@ -14,6 +15,7 @@ using Design_Patterns.Strategy_Design_Pattern;
 using Design_Patterns.Strategy_Design_Pattern.Behavior;
 using Design_Patterns.Strategy_Design_Pattern.DuckCLass;
 using Design_Patterns.Template_Method_Pattern;
+using System.Runtime.CompilerServices;
 
 class Program
 {
@@ -132,5 +134,39 @@ class Program
 
         Order_Facade order_Facade=new Order_Facade();
         order_Facade.orderFood();
+
+        //Iterator Pattern
+
+        ChannelCollection channels = populateChannels();
+        ChannelIterator baseIterator=channels.iterator(ChannelTypeEnum.ALL);
+
+        while (baseIterator.hasNext()) 
+        {
+            Channel ch=baseIterator.next();
+            Console.WriteLine(ch.toString());
+        }
+
+        ChannelIterator englishIterator=channels.iterator(ChannelTypeEnum.ENGLISH);
+
+        while (englishIterator.hasNext())
+        {
+            Channel ch = englishIterator.next();
+            Console.WriteLine(ch.toString());
+        }
+    }
+
+    private static ChannelCollection populateChannels()
+    {
+        ChannelCollection channels = new ChannelCollectionNodeImpl();
+        channels.addChannel(new Channel(98.5, ChannelTypeEnum.ENGLISH));
+        channels.addChannel(new Channel(99.5, ChannelTypeEnum.HINDI));
+        channels.addChannel(new Channel(100.5, ChannelTypeEnum.FRENCH));
+        channels.addChannel(new Channel(101.5, ChannelTypeEnum.ENGLISH));
+        channels.addChannel(new Channel(102.5, ChannelTypeEnum.HINDI));
+        channels.addChannel(new Channel(103.5, ChannelTypeEnum.FRENCH));
+        channels.addChannel(new Channel(104.5, ChannelTypeEnum.ENGLISH));
+        channels.addChannel(new Channel(105.5, ChannelTypeEnum.HINDI));
+        channels.addChannel(new Channel(106.5, ChannelTypeEnum.FRENCH));
+        return channels;
     }
 }
