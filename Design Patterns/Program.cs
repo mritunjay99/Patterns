@@ -12,6 +12,7 @@ using Design_Patterns.Iterator_Design_Pattern;
 using Design_Patterns.Observer_Design_Pattern.Observer_Interface;
 using Design_Patterns.Observer_Design_Pattern.Subject_implementation;
 using Design_Patterns.Observer_Design_Pattern.Subject_Interface;
+using Design_Patterns.State_Pattern;
 using Design_Patterns.Strategy_Design_Pattern;
 using Design_Patterns.Strategy_Design_Pattern.Behavior;
 using Design_Patterns.Strategy_Design_Pattern.DuckCLass;
@@ -197,6 +198,18 @@ class Program
                          1.59));
         Waitress waitress = new Waitress(allMenus);
         waitress.printMenu();
+
+        //State pattern
+
+        GumballMachine gumballMachine = new GumballMachine(5);
+
+        gumballMachine.insertQuarter();
+        gumballMachine.turnCrank();
+        gumballMachine.insertQuarter();
+        gumballMachine.turnCrank();
+        gumballMachine.insertQuarter();
+        gumballMachine.turnCrank();
+        gumballMachine.ejectQuarter();
 
     }
 
